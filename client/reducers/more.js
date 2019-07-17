@@ -1,4 +1,4 @@
-import { TOGGLE_MORE_PANEL, ADD_MORENDA } from '../actions/more'
+import { ADD_MORENDA } from '../actions/more'
 
 const INITIAL_STATE = {
   show: false,
@@ -7,10 +7,16 @@ const INITIAL_STATE = {
 
 const more = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case TOGGLE_MORE_PANEL:
+    case 'OPEN_MORE_PANEL':
       return {
         ...state,
-        show: !state.show
+        show: true
+      }
+
+    case 'CLOSE_MORE_PANEL':
+      return {
+        ...state,
+        show: false
       }
 
     case ADD_MORENDA:
